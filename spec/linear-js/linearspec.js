@@ -38,10 +38,25 @@ describe('vectors', function() {
         expect(w.data[2]).toBeCloseTo(0.7683, 3);
     });
     it('multiplies two vector', function() {
-        // TODO(chpipis): Test dot, cross, and ccw
+        expect(u.dot(v)).toBe(46);
+
+        var w1 = u.cross(v);
+
+        expect(w1.data).toEqual([54, -24, -6]);
+
+        var w2 = v.cross(u);
+
+        expect(w2.data).toEqual([-54, 24, 6]);
+
+        expect(u.ccw(v)).toBe(false);
+        expect(v.ccw(u)).toBe(true);
     });
     it('reflects a vector over a plane', function() {
-        // TODO(chpipis): Test vector reflection
+        var w = v.reflect(u.normalize());
+
+        expect(w.data[0]).toBeCloseTo(3.3253, 3);
+        expect(w.data[1]).toBeCloseTo(7.5421, 3);
+        expect(w.data[2]).toBeCloseTo(-0.2409, 3);
     });
     it('provides unit vectors', function() {
         expect(Vector.i.data).toEqual([1, 0, 0]);

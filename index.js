@@ -82,7 +82,7 @@ class Vector {
     reflect(normal) {
         var projection = this.dot(normal);
 
-        return normal.scale(2 * projection).minus(this);
+        return normal.scale(2 * projection).subtract(this);
     }
 }
 
@@ -93,15 +93,23 @@ class Matrix {
         return new Matrix(data);
     }
     get rowVectors() {
-        // TODO(chpipis): memoize
-        return _.map(this.data, Vector.factory);
+        if (this.rowVisit) {
+            return this.rowMemo;
+        }
+        this.rowVisit = true;
+        return this.rowMemo = _.map(this.data, Vector.factory);
     }
     get colVectors() {
-        // TODO(chpipis): memoize
-        return this.transpose().rowVectors;
+        if (this.colVisit) {
+            return this.colMemo;
+        }
+        this.colVisit = true;
+        return this.colMemo = this.transpose().rowVectors;
     }
     constructor(data) {
         this.data = data;
+        this.rowVisit = false;
+        this.colVisit = false;
     }
     transpose() {
         var args = this.data.concat((...params) => {
