@@ -48,7 +48,7 @@ describe('vectors', function() {
 
 		expect(w2.data).toEqual([-54, 24, 6]);
 
-		expect(u.ccw(v)).toBe(false);
+        expect(u.ccw(v)).toBe(false);
 		expect(v.ccw(u)).toBe(true);
     });
     it('reflects a vector over a plane', function() {
