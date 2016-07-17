@@ -38,25 +38,25 @@ describe('vectors', function() {
         expect(w.data[2]).toBeCloseTo(0.7683, 3);
     });
     it('multiplies two vector', function() {
-		expect(u.dot(v)).toBe(46);
+        expect(u.dot(v)).toBe(46);
 
-		var w1 = u.cross(v);
+        var w1 = u.cross(v);
 
-		expect(w1.data).toEqual([54, -24, -6]);
+        expect(w1.data).toEqual([54, -24, -6]);
 
-		var w2 = v.cross(u);
+        var w2 = v.cross(u);
 
-		expect(w2.data).toEqual([-54, 24, 6]);
+        expect(w2.data).toEqual([-54, 24, 6]);
 
         expect(u.ccw(v)).toBe(false);
-		expect(v.ccw(u)).toBe(true);
+        expect(v.ccw(u)).toBe(true);
     });
     it('reflects a vector over a plane', function() {
-		var w = v.reflect(u.normalize());
+        var w = v.reflect(u.normalize());
 
-		expect(w.data[0]).toBeCloseTo(3.3253, 3);
-		expect(w.data[1]).toBeCloseTo(7.5421, 3);
-		expect(w.data[2]).toBeCloseTo(-0.2409, 3);
+        expect(w.data[0]).toBeCloseTo(3.3253, 3);
+        expect(w.data[1]).toBeCloseTo(7.5421, 3);
+        expect(w.data[2]).toBeCloseTo(-0.2409, 3);
     });
     it('provides unit vectors', function() {
         expect(Vector.i.data).toEqual([1, 0, 0]);
@@ -64,7 +64,7 @@ describe('vectors', function() {
         expect(Vector.k.data).toEqual([0, 0, 1]);
     });
     it('obeys dot product theorems', function() {
-		expect(u.dot(v)).toEqual(v.dot(u));
+        expect(u.dot(v)).toEqual(v.dot(u));
 
         expect(Vector.i.dot(Vector.j)).toBe(0);
         expect(Vector.i.dot(Vector.k)).toBe(0);

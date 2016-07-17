@@ -82,7 +82,7 @@ class Vector {
     reflect(normal) {
         var projection = this.dot(normal);
 
-	    return normal.scale(2 * projection).subtract(this);
+        return normal.scale(2 * projection).subtract(this);
     }
 }
 
@@ -93,15 +93,15 @@ class Matrix {
         return new Matrix(data);
     }
     get rowVectors() {
-		if (this.rowVisit)
+        if (this.rowVisit)
             return this.rowMemo;
-		this.rowVisit = true;
+        this.rowVisit = true;
         return this.rowMemo = _.map(this.data, Vector.factory);
     }
     get colVectors() {
-		if (this.colVisit)
+        if (this.colVisit)
             return this.colMemo;
-		this.colVisit = true;
+        this.colVisit = true;
         return this.colMemo = this.transpose().rowVectors;
     }
     constructor(data) {
