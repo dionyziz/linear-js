@@ -38,7 +38,7 @@ class Vector {
         var newData = _.map(this.data, (a) => {
             return factor * a;
         });
-		
+
         return new Vector(newData);
     }
     add(other) {
@@ -93,14 +93,16 @@ class Matrix {
         return new Matrix(data);
     }
     get rowVectors() {
-        if (this.rowVisit)
+        if (this.rowVisit) {
             return this.rowMemo;
+        }
         this.rowVisit = true;
         return this.rowMemo = _.map(this.data, Vector.factory);
     }
     get colVectors() {
-        if (this.colVisit)
+        if (this.colVisit) {
             return this.colMemo;
+        }
         this.colVisit = true;
         return this.colMemo = this.transpose().rowVectors;
     }
