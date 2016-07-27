@@ -110,6 +110,8 @@ class Matrix {
         this.data = data;
         this.rowVisit = false;
         this.colVisit = false;
+        this.rowMemo = [];
+        this.colMemo = [];
     }
     transpose() {
         var args = this.data.concat((...params) => {
