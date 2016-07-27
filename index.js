@@ -130,6 +130,13 @@ class Matrix {
 
         return Matrix.fromRowVectors(newRowVectors);
     }
+    multiply(other) {
+        var newData = _.map(this.rowVectors, (a) => {
+            return _.map(other.colVectors, v => a.dot(v));
+        });
+
+        return new Matrix(newData);
+    }
 }
 
 exports.Vector = Vector;

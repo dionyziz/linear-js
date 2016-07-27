@@ -100,4 +100,14 @@ describe('matrices', function() {
             [3, -1]
         ]);
     });
+    it('multiplies two matrices', function() {
+        expect(a.multiply(b).data).toEqual([
+            [3, -3],
+            [9,  1]
+        ]);
+        expect(b.multiply(a).data).toEqual([
+            [24,   34],
+            [-15, -20]
+        ]);
+    });
 });
