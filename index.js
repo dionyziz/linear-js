@@ -35,9 +35,7 @@ class Vector {
         return this.scale(-1);
     }
     scale(factor) {
-        var newData = _.map(this.data, (a) => {
-            return factor * a;
-        });
+        var newData = _.map(this.data, a => factor * a);
 
         return new Vector(newData);
     }
