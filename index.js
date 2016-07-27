@@ -112,10 +112,7 @@ class Matrix {
         this.colMemo = [];
     }
     transpose() {
-        var args = this.data.concat((...params) => {
-            return params;
-        });
-        var newData = _.zipWith.apply({}, args);
+        var newData = _.zipWith(...this.data, ...params => params);
 
         return new Matrix(newData);
     }
