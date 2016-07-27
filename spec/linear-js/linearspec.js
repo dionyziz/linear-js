@@ -110,4 +110,10 @@ describe('matrices', function() {
             [-15, -20]
         ]);
     });
+    it('calculates the transpose', function() {
+        expect(a.transpose().data).toEqual([
+            [1, 3],
+            [2, 4]
+        ]);
+    });
 });
