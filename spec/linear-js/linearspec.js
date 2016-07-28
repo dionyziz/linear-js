@@ -94,6 +94,12 @@ describe('matrices', function() {
             [0, -5]
         ]
     );
+    var c = new Matrix(
+        [
+            [1, 2, 3],
+            [4, 5, 6]
+        ]
+    );
     it('adds two matrices', function() {
         expect(a.add(b).data).toEqual([
             [4,  9],
@@ -108,6 +114,17 @@ describe('matrices', function() {
         expect(b.multiply(a).data).toEqual([
             [24,   34],
             [-15, -20]
+        ]);
+    });
+    it('calculates the transpose', function() {
+        expect(a.transpose().data).toEqual([
+            [1, 3],
+            [2, 4]
+        ]);
+        expect(c.transpose().data).toEqual([
+            [1, 4],
+            [2, 5],
+            [3, 6]
         ]);
     });
 });
