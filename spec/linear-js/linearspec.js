@@ -147,4 +147,8 @@ describe('matrices', function() {
             [-4, -5, -6]
         ]);
     });
+    it('returns the trace of a matrix', function() {
+        expect(a.trace()).toBe(5);
+        expect(b.trace()).toBe(-2);
+    });
 });
