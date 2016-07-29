@@ -132,6 +132,11 @@ class Matrix {
 
         return new Matrix(newData);
     }
+    scale(factor) {
+        var newData = _.map(this.rowVectors, a => a.scale(factor));
+
+        return Matrix.fromRowVectors(newData);
+    }
 }
 
 exports.Vector = Vector;
