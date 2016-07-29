@@ -127,4 +127,24 @@ describe('matrices', function() {
             [3, 6]
         ]);
     });
+    it('scales a matrix', function() {
+        expect(b.scale(2).data).toEqual([
+            [6,  14],
+            [0, -10]
+        ]);
+        expect(c.scale(-3).data).toEqual([
+            [-3,   -6,  -9],
+            [-12, -15, -18],
+        ]);
+    });
+    it('negates a matrix', function() {
+        expect(b.negate().data).toEqual([
+            [-3, -7],
+            [-0,  5]
+        ]);
+        expect(c.negate().data).toEqual([
+            [-1, -2, -3],
+            [-4, -5, -6]
+        ]);
+    });
 });
