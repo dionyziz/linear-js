@@ -4,7 +4,7 @@
   "description": "Linear algebra library",
   "main": "index.js",
   "scripts": {
-    "test": "npm run babel && node build/index.bundle.js",
+    "test": "npm run babel && jasmine",
     "babel": "babel --presets es2015 index.js -o build/index.bundle.js"
   },
   "author": "",
