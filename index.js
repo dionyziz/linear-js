@@ -140,6 +140,14 @@ class Matrix {
     negate() {
         return this.scale(-1);
     }
+    trace() {
+        var ret = 0;
+        for (var i = 0; i < this.data.length; i++) {
+            ret += this.data[i][i];
+        }
+
+        return ret;
+    }
 }
 
 exports.Vector = Vector;
