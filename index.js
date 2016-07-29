@@ -137,6 +137,9 @@ class Matrix {
 
         return Matrix.fromRowVectors(newData);
     }
+    negate() {
+        return this.scale(-1);
+    }
 }
 
 exports.Vector = Vector;
