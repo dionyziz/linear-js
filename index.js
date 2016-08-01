@@ -104,6 +104,13 @@ class Matrix {
         this.colVisit = true;
         return this.colMemo = this.transpose().rowVectors;
     }
+    get diagonalVector() {
+        let ret = [];
+        for (let i = 0; i < this.data.length; i++) {
+            ret[i] = this.data[i][i];
+        }
+        return new Vector(ret);
+    }
     constructor(data) {
         this.data = data;
         this.rowVisit = false;
@@ -139,6 +146,9 @@ class Matrix {
     }
     negate() {
         return this.scale(-1);
+    }
+    trace() {
+        return _.sum(this.diagonalVector.data);
     }
 }
 
