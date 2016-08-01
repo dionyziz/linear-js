@@ -147,6 +147,10 @@ describe('matrices', function() {
             [-4, -5, -6]
         ]);
     });
+    it('extracts the diagonal of a matrix', function() {
+        expect(a.diagonalVector.data).toEqual([1,  4]);
+        expect(b.diagonalVector.data).toEqual([3, -5]);
+    });
     it('returns the trace of a matrix', function() {
         expect(a.trace()).toBe(5);
         expect(b.trace()).toBe(-2);
