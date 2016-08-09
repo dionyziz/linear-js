@@ -4,6 +4,7 @@
   "description": "Linear algebra library",
   "main": "index.js",
   "scripts": {
+    "webpack": "webpack --progress --colors",
     "test": "npm run babel && jasmine",
     "babel": "babel --presets es2015 index.js -o build/index.bundle.js"
   },
@@ -12,10 +13,12 @@
   "devDependencies": {
     "babel-cli": "^6.10.1",
     "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.9.0",
     "jasmine": "^2.4.1"
   },
   "dependencies": {
-    "lodash": "^4.13.1"
+    "lodash": "^4.13.1",
+    "webpack": "^1.13.1"
   }
 }
